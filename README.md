@@ -1,68 +1,41 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Snapshot Testing
 
-## Available Scripts
+After i run npm test  this error comes 
 
-In the project directory, you can run:
 
-### `npm start`
+> testing_react@0.1.0 test /home/mike/Documents/All about React/Practice React/testing_react
+> jest --config ./jest.config.json
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+ FAIL  src/App.spec.js
+  ● Test suite failed to run
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+    SyntaxError: /home/mike/Documents/All about React/Practice React/testing_react/src/App.spec.js: Support for the experimental syntax 'jsx' isn't currently enabled (7:37):
 
-### `npm test`
+       5 | describe('Snapshot baby',() => {
+       6 |     test("Test 1",() => {
+    >  7 |         let tree =  renderer.create(<Counter counter={1}/>).toJSON();
+         |                                     ^
+       8 |         expect(tree).toMatchSnapshot();
+       9 |     })
+      10 | })
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    Add @babel/plugin-transform-react-jsx (https://git.io/vb4yd) to the 'plugins' section of your Babel config to enable transformation.
 
-### `npm run build`
+      at Parser._raise (node_modules/@babel/parser/src/parser/error.js:60:45)
+      at Parser.raiseWithData (node_modules/@babel/parser/src/parser/error.js:55:17)
+      at Parser.expectOnePlugin (node_modules/@babel/parser/src/parser/util.js:157:18)
+      at Parser.parseExprAtom (node_modules/@babel/parser/src/parser/expression.js:1180:18)
+      at Parser.parseExprSubscripts (node_modules/@babel/parser/src/parser/expression.js:563:23)
+      at Parser.parseUpdate (node_modules/@babel/parser/src/parser/expression.js:543:21)
+      at Parser.parseMaybeUnary (node_modules/@babel/parser/src/parser/expression.js:527:17)
+      at Parser.parseExprOps (node_modules/@babel/parser/src/parser/expression.js:343:23)
+      at Parser.parseMaybeConditional (node_modules/@babel/parser/src/parser/expression.js:308:23)
+      at Parser.parseMaybeAssign (node_modules/@babel/parser/src/parser/expression.js:263:21)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        1.11s
+Ran all test suites.
+npm ERR! Test failed.  See above for more details.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
